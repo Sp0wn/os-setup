@@ -1,0 +1,17 @@
+1. Select and load keyboard layout:
+
+# The keyboard layouts are stored in the keymaps directory
+# It is divided first in layouts and then languages
+# Then load with loadkeys and the name of the file
+
+ls /usr/share/kbd/keymaps/**/*.map.gz
+loadkeys [layout]
+
+2. Verify boot mode:
+
+# Try to list the efivars directory
+# If there is no output, then is BIOS
+
+ls /sys/firmware/efi/efivars
+
+3.
