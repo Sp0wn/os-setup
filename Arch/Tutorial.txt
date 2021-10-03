@@ -14,4 +14,32 @@ loadkeys [layout]
 
 ls /sys/firmware/efi/efivars
 
-3.
+3. Connect to the internet:
+
+# First we check that our NIC is enabled
+# If not we enable it
+# If is it wifi then we authenticate
+# For open/WEP networks we use the wireless tools
+# For WPA/WPA2 networks we use wpa supplicant
+# An ip address is needed to be configured
+# Then we verify the connection
+
+ip link
+ip link set [interface] up
+iwlist [interface] scan
+
+iwconfig [interface] essid [SSID] key s:[PASSWORD]
+
+wpa_passphrase [SSID] [PASSWORD] > /etc/wifi
+wpa_supplicant -B -i [interface] -c /etc/wifi
+
+dhclient
+
+ping 8.8.8.8
+
+4. Update system clock:
+
+# System clock can be sync with timedatectl
+
+timedatectl set-ntp true
+timedatectl status
