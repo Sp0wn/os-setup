@@ -43,3 +43,34 @@ ping 8.8.8.8
 
 timedatectl set-ntp true
 timedatectl status
+
+5. Partition the disk
+
+# BIOS systems will use MBR partition tables
+# BIOS systems will need to set a boot flag on root
+# UEFI systems will use GPT partition tables
+# UEFI systems will need an EFI file
+# SWAP space can be added if needed
+# / partition goes in /mnt, it's a Linux type
+# SWAP parition must be enabled, it's a Linux swap type
+# /efi file goes in /mnt/efi, it's a EFI system type
+# /home partittion can be mounted in a custom space
+
+fdisk -l
+fdisk [device]
+
+6. Format the partitions
+
+# Linux file system partitions usually have ext4
+# Swap partitions must be initialized
+
+mkfs.ext4 /dev/root
+mkswap /dev/swap
+
+7. Mount the partitions
+
+# All partitions must be mounted in their directories
+# Swap volume must be enabled
+
+mount /dev/root /mnt
+swapon /dev/swap 
