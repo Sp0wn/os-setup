@@ -46,7 +46,7 @@ timedatectl status
 
 5. Partition the disk
 
-# BIOS systems will use MBR partition tables
+# BIOS systems will use DOS partition tables
 # BIOS systems will need to set a boot flag on root
 # UEFI systems will use GPT partition tables
 # UEFI systems will need an EFI file
@@ -74,3 +74,5 @@ mkswap /dev/swap
 
 mount /dev/root /mnt
 swapon /dev/swap 
+
+8. 
