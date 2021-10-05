@@ -105,4 +105,15 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt
 
-12. Set time zone
+12. Set time zone:
+
+# Select and configure the time zone
+# Time zones are saved in the /usr/share/zoneinfo
+# Then it is divided into region and city
+# And after located the file we make a link to /etc/localtime
+# After that run hwclock to make /etc/adjtime
+
+ln -sf /usr/share/zoneinfo/[region]/[city] /etc/localtime
+hwclock --systohc
+
+13. Make locales:
