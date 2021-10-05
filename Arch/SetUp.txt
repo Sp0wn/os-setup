@@ -1,8 +1,27 @@
 1. Add non privileged user:
 
 # Add and configure your normal user
+# Give sudo permission
 
 useradd -m -G wheel [user]
 passwd [user]
 
 2. Start network:
+
+# We are gonne start the network daemon
+
+systemctl start NetworkManager.service
+systemctl enable NetworkManager.service
+
+3. Update system:
+
+# Update and clean the system
+
+sudo pacman -Syu
+sudo pacmna -Scc
+
+4. Install basic packages:
+
+# Install needed packages for a working desktop
+
+sudo pacman -S qtile lightdm xorg
