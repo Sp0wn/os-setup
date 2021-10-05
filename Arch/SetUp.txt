@@ -1,0 +1,8 @@
+1. Add non privileged user:
+
+# Add and configure your normal user
+
+useradd -m -G wheel [user]
+passwd [user]
+
+2. Start network:
