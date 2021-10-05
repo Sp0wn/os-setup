@@ -44,7 +44,7 @@ ping 8.8.8.8
 timedatectl set-ntp true
 timedatectl status
 
-5. Partition the disk
+5. Partition the disk:
 
 # BIOS systems will use DOS partition tables
 # BIOS systems will need to set a boot flag on root
@@ -59,7 +59,7 @@ timedatectl status
 fdisk -l
 fdisk [device]
 
-6. Format the partitions
+6. Format the partitions:
 
 # Linux file system partitions usually have ext4
 # Swap partitions must be initialized
@@ -67,7 +67,7 @@ fdisk [device]
 mkfs.ext4 /dev/root
 mkswap /dev/swap
 
-7. Mount the partitions
+7. Mount the partitions:
 
 # All partitions must be mounted in their directories
 # Swap volume must be enabled
@@ -75,12 +75,34 @@ mkswap /dev/swap
 mount /dev/root /mnt
 swapon /dev/swap 
 
-8. Select the mirrors
+8. Select the mirrors:
 
 # Reflectors can be updated if needed
 
 nano /etc/pacman.d/mirrorlist
 
-9. Install essential packages
+9. Install essential packages:
 
 # The base package, a Linux kernel and firmware for common hardware
+# Install file system utilites like ntfs-3g for NTFS file
+# Install networking software and if needed a dhcp client
+# Install text editors like nano, vi or vim
+# If needed install documentation like man and info pages
+# If using UEFI then install efibootmgr
+# If dual booting then install os-prober
+
+pacstrap /mnt base linux linux-firmware networkmanager nano grub sudo
+
+10. Generate fstab:
+
+# Generate file system table to save partition information
+
+genfstab -U /mnt >> /mnt/etc/fstab
+
+11. Chroot:
+
+# Change root to enter to the installed system
+
+arch-chroot /mnt
+
+12. Set time zone
