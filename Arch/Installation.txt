@@ -64,16 +64,16 @@ fdisk [device]
 # Linux file system partitions usually have ext4
 # Swap partitions must be initialized
 
-mkfs.ext4 /dev/root
-mkswap /dev/swap
+mkfs.ext4 /dev/[root]
+mkswap /dev/[swap]
 
 7. Mount the partitions:
 
 # All partitions must be mounted in their directories
 # Swap volume must be enabled
 
-mount /dev/root /mnt
-swapon /dev/swap 
+mount /dev/[roo]t /mnt
+swapon /dev/[swap] 
 
 8. Select the mirrors:
 
@@ -117,3 +117,36 @@ ln -sf /usr/share/zoneinfo/[region]/[city] /etc/localtime
 hwclock --systohc
 
 13. Make locales:
+
+# For making all the system locales we need to edit some configuration
+# First edit the /etc/locale.gen and uncomment locales needed
+# Then set the LANG variable and KEYMAP variable
+
+nano /etc/locale.gen
+locale-gen
+echo "LANG=[LANG]" > /etc/locale.conf
+echo "KEYMAP=[KEYMAP]" > /etc/vconsole.conf
+
+14. Network configuration:
+
+# First we name our host with the hostname file
+# Then we add entries for our hosts resolution file
+
+echo "[HOSTNAME]" > /etc/hostname
+nano /etc/hosts
+
+15. Set root pass:
+
+# We configure a password for our root user
+
+passwd
+
+16. Bootloader:
+
+# We install and configure our bootloader
+
+grub-install /dev/[disk]
+
+grub-install --target=x86_64-efi --efi-directory=/efi/ --bootloader-id=GRUB
+
+grub-mkconfig -o /boot/grub/grub.cfg
