@@ -75,4 +75,12 @@ mkswap /dev/swap
 mount /dev/root /mnt
 swapon /dev/swap 
 
-8. 
+8. Select the mirrors
+
+# Reflectors can be updated if needed
+
+nano /etc/pacman.d/mirrorlist
+
+9. Install essential packages
+
+# The base package, a Linux kernel and firmware for common hardware
