@@ -25,7 +25,7 @@ sudo pacmna -Scc
 
 # Install needed packages for a working desktop
 
-sudo pacman -S qtile lightdm xorg lightdm-gtk-greeter alacritty firefox
+sudo pacman -S qtile lightdm xorg lightdm-gtk-greeter alacritty firefox rofi
 
 5. Enable login service:
 
@@ -34,4 +34,18 @@ sudo pacman -S qtile lightdm xorg lightdm-gtk-greeter alacritty firefox
 systemctl enable lightdm.service
 systemctl start lightdm.service
 
-6. 
+6. Create user directories:
+
+# Use xdg utilities to create default user directories
+
+sudo pacman -S xdg-user-dirs
+xdg-user-dirs-update
+
+7. Edit the configuration file
+
+# Update configurations with the repo files
+
+cd ~/Downloads
+git clone https://github.com/Sp0wn/os-setup/tree/main/Arch
+
+8. 

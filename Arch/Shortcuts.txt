@@ -1,3 +1,11 @@
 mod + Enter = Open terminal
-mod + Tab = Fullscreen window
+mod + Tab = Change layout
 mod + ctrl + r = Restart window manager
+mod + [h,j,k,l] = Move focus
+mod + shift + [h,j,k,l] = Move window
+mod + ctrl + [h,j,k,l] = Increase window size
+mod + group = Move to group
+mod + shift + group = Move window to group
+mod + w = Close window
+mod + m = Launch menu
+mod + shift + m = Change to a window
