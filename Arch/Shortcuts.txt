@@ -1,0 +1,3 @@
+mod + Enter = Open terminal
+mod + Tab = Fullscreen window
+mod + ctrl + r = Restart window manager

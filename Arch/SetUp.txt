@@ -25,7 +25,7 @@ sudo pacmna -Scc
 
 # Install needed packages for a working desktop
 
-sudo pacman -S qtile lightdm xorg lightdm-gtk-greeter xterm code firefox
+sudo pacman -S qtile lightdm xorg lightdm-gtk-greeter alacritty firefox
 
 5. Enable login service:
 
