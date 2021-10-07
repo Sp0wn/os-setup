@@ -25,7 +25,7 @@ sudo pacmna -Scc
 
 # Install needed packages for a working desktop
 
-sudo pacman -S qtile lightdm xorg lightdm-gtk-greeter alacritty firefox rofi
+sudo pacman -S qtile lightdm xorg lightdm-gtk-greeter alacritty firefox rofi git
 
 5. Enable login service:
 
@@ -48,4 +48,39 @@ xdg-user-dirs-update
 cd ~/Downloads
 git clone https://github.com/Sp0wn/os-setup/tree/main/Arch
 
-8. 
+8. Configure menu launcher:
+
+# Configure and customize the menu launcher
+
+sudo pacman -S sed which
+rofi-theme-selector
+
+9. Configure desktop:
+
+# Add a wallpaper and some effects
+# To use transparency with picom, first edit the picom.conf file
+
+sudo pacman -S feh picom
+cd ~/Downloads
+git clone https://github.com/antoniosarosi/Wallpapers
+feh --bg-scale ~/Downloads/Wallpapers/01.png
+picom &
+
+10. Install audio:
+
+# Install and configure basic audio
+
+sudo pacman -S pulseaudio pavucontrol
+pulseaudio
+pavucontrol
+
+11. Set a start script
+
+# Use a xprofile script to permanently establish your configurations
+# First reference your xprofile file in the Xsession configuration
+# Then you can add an xprofile file and add commands
+
+nano /etc/lightdm/Xsession
+nano ~/.xprofile
+
+12.
