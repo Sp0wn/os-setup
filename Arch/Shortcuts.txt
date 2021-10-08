@@ -9,3 +9,4 @@ mod + shift + group = Move window to group
 mod + w = Close window
 mod + m = Launch menu
 mod + shift + m = Change to a window
+mod + b = Open internet browser

@@ -74,7 +74,7 @@ sudo pacman -S pulseaudio pavucontrol
 pulseaudio
 pavucontrol
 
-11. Set a start script
+11. Set a start script:
 
 # Use a xprofile script to permanently establish your configurations
 # First reference your xprofile file in the Xsession configuration
@@ -83,4 +83,24 @@ pavucontrol
 nano /etc/lightdm/Xsession
 nano ~/.xprofile
 
-12.
+12. Install AUR manager:
+
+# We need to install yay for intalling community packages
+
+sudo pacman -S fakeroot base-devel binutils
+cd ~/Downloads
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+13. Install new fonts:
+
+# We are gonna use nerd fonts
+
+yay -S nerd-fonts-ubuntu-mono
+
+14. Install audio mixer:
+
+# We are gonna use the volume icon app
+
+sudo pacman -S volumeicon
