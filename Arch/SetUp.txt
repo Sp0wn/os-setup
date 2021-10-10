@@ -71,16 +71,12 @@ picom &
 # Install and configure basic audio
 
 sudo pacman -S pulseaudio pavucontrol
-pulseaudio
-pavucontrol
 
 11. Set a start script:
 
 # Use a xprofile script to permanently establish your configurations
-# First reference your xprofile file in the Xsession configuration
 # Then you can add an xprofile file and add commands
 
-nano /etc/lightdm/Xsession
 nano ~/.xprofile
 
 12. Install AUR manager:
@@ -104,3 +100,24 @@ yay -S nerd-fonts-ubuntu-mono
 # We are gonna use the volume icon app
 
 sudo pacman -S volumeicon
+volumeicon &
+
+15. Install media manager:
+
+# We will need to install udisk utilities for USBs
+
+sudo pacman -S udiskie
+udiskie -t &
+
+16. Insall media apps:
+
+# We need to install apps to open media apps
+
+sudo pacman -S imv vlc
+
+17. Screenshot tool:
+
+# For screenshots we will use scrot
+
+sudo pacman -S scrot
+scrot -e 'mv $f ~/Pictures'
