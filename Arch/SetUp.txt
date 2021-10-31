@@ -121,3 +121,19 @@ sudo pacman -S imv vlc
 
 sudo pacman -S scrot
 scrot -e 'mv $f ~/Pictures'
+
+18. Zip utilities:
+
+# We need to install zips tools
+
+sudo pacman -S unzip
+
+19. GTK Theme
+
+# We are gonna install a theme and icons
+
+sudo mv [theme] /usr/share/themes
+sudo mv [icons] /usr/share/icons
+
+nano ~/.gtkrc-2.0
+nano ~/.config/gtk-3.0/settings.ini
