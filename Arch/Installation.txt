@@ -53,7 +53,7 @@ timedatectl status
 # SWAP space can be added if needed
 # / partition goes in /mnt, it's a Linux type
 # SWAP parition must be enabled, it's a Linux swap type
-# /efi file goes in /mnt/efi, it's a EFI system type
+# /efi file goes in /mnt/efi, it's an EFI system type
 # /home partittion can be mounted in a custom space
 
 fdisk -l
@@ -72,7 +72,7 @@ mkswap /dev/[swap]
 # All partitions must be mounted in their directories
 # Swap volume must be enabled
 
-mount /dev/[roo]t /mnt
+mount /dev/[root] /mnt
 swapon /dev/[swap] 
 
 8. Select the mirrors:
