@@ -137,3 +137,17 @@ sudo mv [icons] /usr/share/icons
 
 nano ~/.gtkrc-2.0
 nano ~/.config/gtk-3.0/settings.ini
+
+20. Network app
+
+# For connections we will use nm-applet
+
+sudo pacman -S network-manager-applet
+nm-applet &
+
+21. Battery app
+
+# For laptops battery indicator
+
+sudo pacman -S cbatticon
+cbatticon &
