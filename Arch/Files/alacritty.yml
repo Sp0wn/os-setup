@@ -1,0 +1,26 @@
+background_opacity: 0.95
+font:
+  normal:
+    family: UbuntuMono Nerd Font
+    style: Regular
+
+  bold:
+    family: UbuntuMono Nerd Font
+    style: Bold
+
+  italic:
+    family: UbuntuMono Nerd Font
+    style: Italic
+
+  size: 14
+window:
+  padding:
+    x: 5
+    y: 5
+
+# Colors (Jellybeans)
+colors:
+  # Default colors
+  primary:
+    background: '#161616'
+    foreground: '#3ACECE'

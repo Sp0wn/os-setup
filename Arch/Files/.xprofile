@@ -1,0 +1,7 @@
+xrandr --output Virtual-1 --mode "1920x1080"
+feh --bg-scale ~/Downloads/Wallpapers/01.png
+picom &
+volumeicon &
+cbatticon &
+nm-applet &
+udiskie -t &
