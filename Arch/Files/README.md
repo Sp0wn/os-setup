@@ -21,3 +21,7 @@ Configuration files
 ```
 ~/.git-prompt.sh
 ```
+* .wallpapers
+```
+~/.wallpapers
+```
