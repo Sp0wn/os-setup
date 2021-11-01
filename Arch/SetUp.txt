@@ -45,6 +45,7 @@ xdg-user-dirs-update
 
 # Update configurations with the repo files
 
+sudo pacman -S pacman-contrib
 cd ~/Downloads
 git clone https://github.com/Sp0wn/os-setup.git
 
