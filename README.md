@@ -1,2 +1,2 @@
-# Qtile
+# Arch
 ![Qtile](.screenshots/Qtile.png)

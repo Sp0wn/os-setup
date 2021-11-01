@@ -160,6 +160,12 @@ nano ~/.bashrc
 nano ~/.git-prompt.sh
 chmod 755 .git-prompt.sh
 
+sudo pacman -S fish
+chsh -s /bin/fish
+omf install agnoster
+omf doctor
+nano ~/.config/fish/config.fish
+
 23. Better bins:
 
 sudo pacman -S exa
@@ -185,3 +191,9 @@ sudo pacman -S ranger
 
 sudo pacman -S xcb-util-cursor
 sudo mv Cursor /usr/share/icons
+
+27. Code editor:
+
+# We will use neovim as a text editor
+
+sudo pacman -S neovim

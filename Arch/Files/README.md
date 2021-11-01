@@ -29,3 +29,7 @@ Configuration files
 ```
 /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 ```
+* config.fish
+```
+~/.config/fish/config.fish
+```
