@@ -128,26 +128,45 @@ scrot -e 'mv $f ~/Pictures'
 
 sudo pacman -S unzip
 
-19. GTK Theme
+19. GTK Theme:
 
 # We are gonna install a theme and icons
 
 sudo mv [theme] /usr/share/themes
 sudo mv [icons] /usr/share/icons
 
-nano ~/.gtkrc-2.0
-nano ~/.config/gtk-3.0/settings.ini
+sudo pacman -S lxappearance
+lxappearance
 
-20. Network app
+20. Network app:
 
 # For connections we will use nm-applet
 
 sudo pacman -S network-manager-applet
 nm-applet &
 
-21. Battery app
+21. Battery app:
 
 # For laptops battery indicator
 
 sudo pacman -S cbatticon
 cbatticon &
+
+22. Customs shells:
+
+# We will be using bash and fish
+
+sudo pacman -S bash-completion
+
+nano ~/.bashrc
+
+23. Better bins:
+
+sudo pacman -S exa
+yay -S ccat
+
+24. Notifications:
+
+# If system notifications needed
+
+sudo pacman -S libnotify notification-daemon
