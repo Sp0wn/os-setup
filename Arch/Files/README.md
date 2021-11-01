@@ -33,3 +33,11 @@ Configuration files
 ```
 ~/.config/fish/config.fish
 ```
+* init.vim
+```
+~/.config/nvim/init.vim
+```
+* rc.conf
+```
+~/.config/ranger/rc.conf
+```

@@ -184,6 +184,10 @@ sudo nano /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 # For browsing files in system
 
 sudo pacman -S ranger
+git clone https://github.com/alexanderjeurissen/ranger_devicons
+~/.config/ranger/plugins/ranger_devicons
+
+nano ~/.config/ranger/rc.conf
 
 26. Cursor:
 
@@ -196,4 +200,13 @@ sudo mv Cursor /usr/share/icons
 
 # We will use neovim as a text editor
 
-sudo pacman -S neovim
+sudo pacman -S neovim xclip powerline-fonts zenity nodejs npm python-pip
+pip install jedi
+nano ~/.config/nvim/init.vim
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:
+-$HOME/.local/share}"/nvim/site/
+autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com
+/junegunn/vim-plug/master/plug.vim'
+
