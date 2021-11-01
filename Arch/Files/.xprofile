@@ -1,0 +1,6 @@
+feh --bg-scale ~/.wallpapers/01.png
+picom &
+volumeicon &
+udiskie -t &
+cbatticon &
+nm-applet &
