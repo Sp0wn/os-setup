@@ -157,8 +157,9 @@ cbatticon &
 # We will be using bash and fish
 
 sudo pacman -S bash-completion
-
 nano ~/.bashrc
+nano ~/.git-prompt.sh
+chmod 755 .git-prompt.sh
 
 23. Better bins:
 
