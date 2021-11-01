@@ -25,3 +25,7 @@ Configuration files
 ```
 ~/.wallpapers
 ```
+* org.freedesktop.Notifications.service
+```
+/usr/share/dbus-1/services/org.freedesktop.Notifications.service
+```

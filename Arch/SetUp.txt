@@ -62,7 +62,6 @@ rofi-theme-selector
 
 sudo pacman -S feh picom
 cd ~/Downloads
-git clone https://github.com/antoniosarosi/Wallpapers
 feh --bg-scale ~/Downloads/Wallpapers/01.png
 picom &
 
@@ -171,3 +170,18 @@ yay -S ccat
 # If system notifications needed
 
 sudo pacman -S libnotify notification-daemon
+
+sudo nano /usr/share/dbus-1/services/org.freedesktop.Notifications.service
+
+25. File manager:
+
+# For browsing files in system
+
+sudo pacman -S ranger
+
+26. Cursor:
+
+# We will use the breeze theme
+
+sudo pacman -S xcb-util-cursor
+sudo mv Cursor /usr/share/icons
