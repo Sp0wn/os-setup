@@ -29,3 +29,19 @@ Configuration files
 ```
 ~/.config/picom/picom.conf
 ```
+* bin
+```
+~/.config/bin
+```
+* .p10k.zsh
+```
+~/.p10k.zsh
+```
+* .zshrc
+```
+~/.zshrc
+```
+* init.vim
+```
+~/.config/nvim/init.vim
+```

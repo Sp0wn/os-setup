@@ -1,4 +1,4 @@
-1. Update system:
+1 Update system:
 
 # After a fresh install we will need an update
 
@@ -146,4 +146,40 @@ nano picom.conf
 echo 'picom --experimental-backends &' >> ~/.config/bspwm/bspwmrc 
 echo 'bspc config border_width 0' >> ~/.config/bspwm/bspwmrc
 
-13. ## 1:05:47
+13. Set Shell:
+
+# We will use the zsh shell with the powerlevel10k
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+zsh
+
+usermod --shell /usr/bin/zsh [user]
+usermod --shell /usr/bin/zsh root
+
+14. Install better bins:
+
+# We will install bat for cat, lsd for ls
+# Then fzf as a file search tool and ranger as a file browser
+
+dpkg -i [bat.deb]
+dpkg -i [lsd.deb]
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+sudo apt install ranger
+
+15. Configure nvim:
+
+# As a text editor we will use neovim
+
+cd ~/.config/nvim/
+wget https://github.com/arcticicestudio/nord-vim/archive/master.zip
+unzip master.zip 
+rm master.zip 
+mv nord-vim-master/colors/ .
+rm -r nord-vim-master/
+wget https://raw.githubusercontent.com/Necros1s/lotus/master/lotus.vim
+wget https://raw.githubusercontent.com/Necros1s/lotus/master/lotusbar.vim
+wget https://raw.githubusercontent.com/Necros1s/lotus/master/init.vim 
