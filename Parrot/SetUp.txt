@@ -14,19 +14,136 @@ libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev
 libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev 
 libxcb-xtest0-dev libxcb-shape0-dev
 
-3. Install bspwn and sxhkd:
+3. Install bspwm and sxhkd:
 
 # We will install our tiling manager and hotkey daemon
 
 cd ~/Downloads
 
-git clone https://github.com/baskerville/bspwn.git
+git clone https://github.com/baskerville/bspwm.git
 git clone https://github.com/baskerville/sxhkd.git
 
-cd bspwn
+cd bspwm
 make
 sudo make install
+sudo apt install bspwm
 
 cd ../sxhkd
 make
 sudo make install
+
+4. Configure the shortcuts and manager:
+
+# For a working workspace we will need some configurations
+# We will need the copy first some examples
+
+cd ~/.config
+mkdir bspwm
+mkdir sxhkd
+
+cp ~/Downloads/bspwm/examples/bspwmrc bspwm
+chmod +x bspwm/bspwmrc
+
+cp ~/Downloads/bspwm/examples/sxhkdrc sxhkd
+nano sxhkd/sxhkdrc
+
+5. Install Polybar:
+
+# For a polybar we need some other packages
+
+sudo apt install cmake cmake-data pkg-config python3-sphinx
+libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev
+libxcb-composite0-dev python3-xcbgen xcb-proto
+libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
+libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev
+libasound2-dev libpulse-dev libjsoncpp-dev libmpdclient-dev
+libcurl4-openssl-dev libnl-genl-3-dev libuv1-dev
+
+cd ~/Downloads
+git clone --recursive https://github.com/polybar/polybar
+cd polybar
+mkdir build
+cd build
+cmake ..
+make -j$(nproc)
+sudo make install
+
+6. Install Picom:
+
+# For some nice effects we will use Picom as composer
+
+sudo apt update
+sudo apt install meson libxext-dev libxcb1-dev
+libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev
+libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev
+libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev
+libxcb-xinerama0-dev libpixman-1-dev libdbus-1-dev libconfig-dev
+libgl1-mesa-dev libpcre2-dev libevdev-dev uthash-dev libev-dev
+libx11-xcb-dev libxcb-glx0-dev
+
+cd ~/Downloads
+git clone https://github.com/ibhagwan/picom.git
+cd picom/
+git submodule update --init --recursive
+meson --buildtype=release . build
+ninja -C build
+sudo ninja -C build install
+
+7. Install menu:
+
+# For a menu we will use rofi
+
+sudo apt install rofi
+
+8. Install web browser:
+
+# We are gonna install firefox and firejail
+# Go to the download page of firefox
+# Set a shortcut for firefox in firejail
+# We can customize the web browser
+
+cd /opt
+cp ~/Downloads/[firefox-tar] .
+tar -xf [firefox-tar]
+sudo apt firejail
+
+9. Install fonts:
+
+# Install some fonts for the terminal
+# We will be using the Hack Nerd Fonts
+
+cd /usr/local/share/fonts
+mv ~/Downloads/[font.zip] .
+unzip [font.zip]
+
+10. Install feh:
+
+# For a background we need feh
+
+sudo apt install feh
+feh --bg-fill /home/sp0wn/.wallpapers/01.jpg
+
+11. Configure polybar:
+
+# For customizing our polybar we will use a repo
+# Then we can clone also our files
+
+git clone https://github.com/VaughnValle/blue-sky.git
+cd ~/Downloads/blue-sky/polybar/
+cp * -r ~/.config/polybar
+echo '~/.config/polybar/./launch.sh' >> ~/.config/bspwm/bspwmrc 
+cd fonts
+sudo cp * /usr/share/fonts/truetype/
+fc-cache -v
+
+12. Configure Picom:
+
+# To have effects we are gonna copy a repo
+
+cd ~/.config/picom
+nano picom.conf
+
+echo 'picom --experimental-backends &' >> ~/.config/bspwm/bspwmrc 
+echo 'bspc config border_width 0' >> ~/.config/bspwm/bspwmrc
+
+13. ## 1:05:47

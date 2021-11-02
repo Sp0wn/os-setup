@@ -1,0 +1,12 @@
+mod + Enter = Open terminal
+mod + m = Change layout
+mod + Esc = Reload sxhkd
+mod + alt + q = Quit bspwm
+mod + alt + r = Restart bspwm
+mod + shift + [h,j,k,l] = Move focus
+mod + shift + [1-9] = Move window to workspace
+mod + [1-9] = Move to workspace
+mod + alt + [shift] + [h,j,k,l] = Resize window
+mod + w = Close window
+mod + d = Open menu
+mod + shift + f = Open Browser
