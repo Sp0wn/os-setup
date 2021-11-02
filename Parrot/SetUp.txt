@@ -1,0 +1,32 @@
+1. Update system:
+
+# After a fresh install we will need an update
+
+sudo apt update
+sudo parrot-upgrade
+
+2. Install basic packages:
+
+# We will install some dependencies
+
+apt install build-essential git vim xcb libxcb-util0-dev
+libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev 
+libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev 
+libxcb-xtest0-dev libxcb-shape0-dev
+
+3. Install bspwn and sxhkd:
+
+# We will install our tiling manager and hotkey daemon
+
+cd ~/Downloads
+
+git clone https://github.com/baskerville/bspwn.git
+git clone https://github.com/baskerville/sxhkd.git
+
+cd bspwn
+make
+sudo make install
+
+cd ../sxhkd
+make
+sudo make install
